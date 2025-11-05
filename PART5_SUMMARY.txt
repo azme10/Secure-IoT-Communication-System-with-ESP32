@@ -1,0 +1,100 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    ESP32 LAB - PART 5 COMPLETED ✅                        ║
+║          Mutual Authentication with X.509 Certificates and TLS            ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📁 FILES CREATED:
+================================================================================
+
+1. sender_tls_mutual_auth.ino      - TLS Client with certificate authentication
+2. receiver_tls_mutual_auth.ino    - TLS Server with certificate authentication
+3. generate_certificates.py        - Certificate generation script (✅ already run)
+4. README_PART5.md                 - Complete documentation
+5. certs/                          - Certificate directory with 6 files
+
+📋 CERTIFICATES GENERATED:
+================================================================================
+✅ ca_cert.pem         - Certificate Authority (Root of Trust)
+✅ ca_key.pem          - CA Private Key
+✅ server_cert.pem     - Receiver's Identity Certificate
+✅ server_key.pem      - Receiver's Private Key
+✅ client_cert.pem     - Sender's Identity Certificate
+✅ client_key.pem      - Sender's Private Key
+
+🔐 CERTIFICATES ALREADY EMBEDDED:
+================================================================================
+✅ sender_tls_mutual_auth.ino   - Updated with client cert, key, and CA
+✅ receiver_tls_mutual_auth.ino - Updated with server cert, key, and CA
+
+🚀 NEXT STEPS TO TEST:
+================================================================================
+
+1. UPDATE WIFI CREDENTIALS IN BOTH FILES:
+   
+   const char* ssid = "YOUR_WIFI_SSID";        ← Change this
+   const char* password = "YOUR_WIFI_PASSWORD"; ← Change this
+
+2. UPLOAD RECEIVER FIRST:
+   - Open: receiver_tls_mutual_auth.ino
+   - Upload to ESP32 #1
+   - Open Serial Monitor (115200 baud)
+   - Note the IP address (e.g., 192.168.1.105)
+
+3. UPDATE SENDER WITH RECEIVER'S IP:
+   - Open: sender_tls_mutual_auth.ino
+   - Find: const char* serverIP = "192.168.1.XXX";
+   - Update with receiver's IP
+   - Upload to ESP32 #2
+
+4. TEST SECURE COMMUNICATION:
+   - Open Serial Monitor for Sender (115200 baud)
+   - Wait for "💬 Type messages to send securely..."
+   - Type a message and press Enter
+   - Watch encrypted transmission!
+
+📊 WHAT YOU'LL SEE:
+================================================================================
+
+RECEIVER OUTPUT:
+  🔧 Initializing TLS Receiver with Mutual Authentication...
+  ✅ WiFi connected! IP: 192.168.1.105
+  🔔 Incoming connection detected!
+  ✅ TLS handshake successful!
+  🎉 Mutual authentication complete!
+  📥 Received: 'Hello Secure World'
+
+SENDER OUTPUT:
+  🔧 Initializing TLS Sender with Mutual Authentication...
+  ✅ WiFi connected! IP: 192.168.1.106
+  ✅ TLS handshake successful!
+  🎉 Mutual authentication complete!
+  💬 Type messages to send securely...
+  📤 Sending encrypted: 'Hello Secure World'
+
+🔒 SECURITY FEATURES:
+================================================================================
+✅ Mutual Authentication      - Both parties verify each other's identity
+✅ Certificate Validation     - Uses X.509 PKI infrastructure
+✅ Man-in-the-Middle Protection - Attacker cannot intercept/modify
+✅ Forward Secrecy            - Each session uses ephemeral keys
+✅ Industry Standard TLS      - Production-grade security
+
+🎯 PARTS COMPLETED:
+================================================================================
+✅ Part 1: ESP32 Getting Started
+✅ Part 2: AES Encryption Testing
+✅ Part 3: ESP-NOW with AES (hardcoded key)
+✅ Part 4: Diffie-Hellman (DH) & Elliptic Curve DH (ECDH) key exchange
+✅ Part 5: Mutual Authentication with X.509 Certificates and TLS
+⏳ Part 6: Hardware Acceleration (Next!)
+
+📚 DOCUMENTATION:
+================================================================================
+- Full details in README_PART5.md
+- Certificate structure explained
+- TLS handshake process documented
+- Troubleshooting guide included
+
+═══════════════════════════════════════════════════════════════════════════════
+                    🎉 READY TO DEPLOY SECURE ESP32 COMMUNICATION! 🎉
+═══════════════════════════════════════════════════════════════════════════════

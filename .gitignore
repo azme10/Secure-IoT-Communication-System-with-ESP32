@@ -1,0 +1,27 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
+
+# PDF analysis reports
+resume_analysis_*.pdf
+
+# Personal files
+mensi-removebg-preview.jpg
+CV_*.tex
+
+# OS files
+.DS_Store
+Thumbs.db
